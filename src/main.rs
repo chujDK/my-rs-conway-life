@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use nannou::prelude::*;
 use nannou::winit;
 use nannou_egui::{self, egui, Egui};
