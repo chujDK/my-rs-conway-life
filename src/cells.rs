@@ -106,7 +106,7 @@ impl Cells {
     }
 
     fn i2c(&self, index: usize) -> (usize, usize) {
-        (index / self.x, index % self.x)
+        (index % self.x, index / self.x)
     }
 
     /// coordinate to index helper function
