@@ -103,6 +103,11 @@ fn update(_app: &App, state: &mut LifeGameModel, update: Update) {
     let ctx = egui.begin_frame();
 
     egui::Window::new("Settings").show(&ctx, |ui| {
+        ui.label("Time per generation:");
+        ui.add(egui::Slider::new(
+            &mut state.pre_generation_time,
+            100..=2000,
+        ));
         let click = ui.button("start/pause").clicked();
         if click {
             state.running = !state.running;
