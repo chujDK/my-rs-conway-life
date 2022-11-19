@@ -8,4 +8,5 @@ author = ["chuj <1768485949@qq.com>"]
 
 [dependencies]
 nannou = "0.18"
+nannou_egui = "0.5"
 thiserror = "1.0"
