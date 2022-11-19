@@ -2,7 +2,7 @@
 name = "conway-life"
 version = "0.1.0"
 edition = "2021"
-author = "chuj"
+author = ["chuj <1768485949@qq.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

@@ -26,6 +26,14 @@ impl Cells {
         }
     }
 
+    pub fn x(&self) -> usize {
+        self.x
+    }
+
+    pub fn y(&self) -> usize {
+        self.y
+    }
+
     pub fn set(
         &mut self,
         x: usize,
@@ -114,6 +122,10 @@ mod cells_test {
     #[test]
     fn set_get_test() {
         let mut cells = Cells::new(30, 20);
+
+        assert_eq!(30, cells.x());
+        assert_eq!(20, cells.y());
+
         cells.set(15, 12, CellState::Alive).unwrap();
         cells.set(13, 12, CellState::Alive).unwrap();
         cells.set(10, 11, CellState::Alive).unwrap();
