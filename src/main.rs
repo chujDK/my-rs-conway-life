@@ -105,14 +105,21 @@ fn update(_app: &App, state: &mut LifeGameModel, update: Update) {
     let ctx = egui.begin_frame();
 
     egui::Window::new("Settings").show(&ctx, |ui| {
-        ui.label("Time per generation:");
+        ui.label("Time per generation (ms):");
         ui.add(egui::Slider::new(
             &mut state.pre_generation_time,
             100..=2000,
         ));
+        ui.label("Right click to make one cell alive");
         let click = ui.button("start/pause").clicked();
         if click {
             state.running = !state.running;
+        }
+
+        if state.running {
+            ui.label("Running..");
+        } else {
+            ui.label("pausing..");
         }
     });
 
