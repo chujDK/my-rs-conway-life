@@ -79,7 +79,7 @@ impl Cells {
             lives += check(x + 1, y - 1);
         }
 
-        lives += check(x, y + 1) + check(x + 1, y + 1) + check(x + 1, y + 1);
+        lives += check(x, y + 1) + check(x + 1, y + 1) + check(x + 1, y);
 
         lives
     }
@@ -94,7 +94,7 @@ impl Cells {
                     }
                 }
                 n if n == 2 => {
-                    // nothing change, dead still dead, live long live
+                    // nothing change, dead still dead, long live the live
                 }
                 _ => {
                     if *cell == CellState::Alive {
@@ -155,6 +155,11 @@ mod cells_test {
         cells.set(1, 1, CellState::Alive).unwrap();
         cells.set(1, 2, CellState::Alive).unwrap();
         cells.set(2, 1, CellState::Alive).unwrap();
+
+        assert_eq!(3, cells.count_neighbors((0, 0)));
+        assert_eq!(3, cells.count_neighbors((1, 0)));
+        assert_eq!(3, cells.count_neighbors((2, 0)));
+        assert_eq!(4, cells.count_neighbors((1, 1)));
 
         // [x] [x] [x]
         // [x] [ ] [x]
